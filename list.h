@@ -1,4 +1,4 @@
-//Jack Brockett and Sean Gordon 2-14-17
+//Sean Gordon 2-14-17
 
 #ifndef LIST_H
 #define LIST_H
