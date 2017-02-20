@@ -1,4 +1,4 @@
-//Jack Brockett and Sean Gordon 2-14-17
+//Sean Gordon 2-14-17
 
 #ifndef WORD_H
 #define WORD_H
