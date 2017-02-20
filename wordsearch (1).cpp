@@ -1,6 +1,5 @@
-//Jack Brockett and Sean Gordon 2-14-17
-//project takes awhile to initialize for large text files
-//takes about 15min to initialize the 8 text files from Gauchospace
+//Sean Gordon 2-14-17
+
 
 
 #include <sys/types.h>
@@ -16,7 +15,6 @@
 using namespace std;
 
 // Given a directory, return all the files in that directory
-// if the directory does not exist -- report error.
 int getdir (string dir, vector<string> &files)
 {
   	DIR *dp;
@@ -51,16 +49,16 @@ int main(int argc, char* argv[])
 		return(-2);
     	}
   
-  	// THIS PART OF THE CODE SETS UP THE INVERTED INDEX 
+  	//sets up the inverted index 
   	string slash("/");
  	for (unsigned int i = 0; i < files.size(); i++) {
-   	if(files[i][0]=='.') continue; //skip hidden files
-    	ifstream fin((string(argv[1])+slash+files[i]).c_str()); //open using absolute path
-    	string word;
-    	while(true){
-      		fin>>word;
-      		if(fin.eof()) {break;}
-      		wsearch.organize(word, files[i]);
+   		if(files[i][0]=='.') continue; //skip hidden files
+    		ifstream fin((string(argv[1])+slash+files[i]).c_str()); //open using absolute path
+    		string word;
+    		while(true){
+      			fin>>word;
+      			if(fin.eof()) {break;}
+      			wsearch.organize(word, files[i]);
     		}
     	fin.close();
 	}
